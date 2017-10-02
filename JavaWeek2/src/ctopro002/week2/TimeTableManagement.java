@@ -1,11 +1,21 @@
 package ctopro002.week2;
 
+
+
+
 public class TimeTableManagement {
+	static final boolean debug_log = true;
+	
 	public static void main(String[] args) {
 		Lecture lec1 = new Lecture("EDU_JAVA", "난 정말 Java를 공부한 적이 없다구요", "윤성우");
 		lec1.addLectureTime(TimeInfo.DAY_MONDAY, 1, 3); // 월 8시 ~ 10시
 		lec1.addLectureTime(TimeInfo.DAY_TUESDAY, 1, 3); // 화 8시 ~ 10시
 		lec1.setCredit(2);
+
+		Lecture lec5 = new Lecture("EDU_PYTHON", "Python 언어 기초", "홍길동");
+		lec5.addLectureTime(TimeInfo.DAY_MONDAY, 8, 10); // 월 15시 ~ 17시
+		lec5.addLectureTime(TimeInfo.DAY_WEDNESDAY, 8, 10); // 월 15시 ~ 17시
+		lec5.setCredit(1);
 
 		Lecture lec2 = new Lecture("EDU_PYTHON", "Python 언어 기초", "홍길동");
 		lec2.addLectureTime(TimeInfo.DAY_MONDAY, 8, 10); // 월 15시 ~ 17시
@@ -27,6 +37,7 @@ public class TimeTableManagement {
 		timetable1.addLecture(lec2);
 		timetable1.addLecture(lec3);
 		timetable1.addLecture(lec4);
+	//	timetable1.addLecture(lec5);
 		timetable1.showTimeTable();
 	}
 }

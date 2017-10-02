@@ -5,38 +5,53 @@ public class Lecture {
 	public static final int MAX_TIME = 9;
 
 	// TODO 강의 정보를 저장하기 위해 필요한 변수를 선언한다
+	private String lecCode;
+	private String lecName;
+	private String lecInstructor;
+	private int lecCredit;
+	private TimeInfo lecTimeInfo;
+	
+	
 
 	public Lecture(String code, String name, String instructor) {
 		// TODO 변수를 초기화 한다
+		lecCode = code;
+		lecName = name;
+		lecInstructor = instructor;
+		
 	}
 
 	// 강의 코드 반환
 	public String getCode() {
 		// TODO 해당되는 메소드 변수 값 반환
-		return null;
+		return lecCode;
 	}
 
 	// 강의명 반환
 	public String getName() {
 		// TODO 해당되는 메소드 변수 값 반환
-		return null;
+		return lecName;
 	}
 
 	// 강사 반환
 	public String getInstructor() {
 		// TODO 해당되는 메소드 변수 값 반환
-		return null;
+		return lecInstructor;
 	}
 
 	// 학점 반환
 	public int getCredit() {
 		// TODO 해당되는 메소드 변수 값 반환
-		return 0;
+		return lecCredit;
 	}
 
 	// 학점 설정
 	public void setCredit(int value) {
 		// TODO 해당되는 메소드 변수 값 설정. 유효한 학점 값인지 확인한다.
+		if( value <= 0 && value >= 3)
+			lecCredit = value;
+
+		return;
 	}
 
 	// 강의 등록
@@ -49,6 +64,7 @@ public class Lecture {
 		}
 
 		// TODO 새로운 강의 시간 클래스의 인스턴스를 만들어서, 해당되는 메소드 변수에 저장한다
+		lecTimeInfo = new TimeInfo( day, start, finish );
 	}
 
 	// 강의 시간 수를 반환
